@@ -2,11 +2,17 @@
 <form action="/new" method="POST">
   <label for="authorName" class="authorName"
     >Author name:
-    <input type="text" name="authorName" id="authorName" placeholder="John Doe"
+    <input
+      required
+      type="text"
+      name="authorName"
+      id="authorName"
+      placeholder="John Doe"
   /></label>
   <label for="message" class="message"
     >Message:
     <textarea
+      required
       type="text"
       name="message"
       id="message"
