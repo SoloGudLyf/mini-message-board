@@ -1,0 +1,17 @@
+
+
+<html>
+  <head>
+    <title>Write Message</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header>
+        <%- include('navBar'); %>
+        <h1>Message details</h1>
+    </header>
+    <li>
+      <span class="username"><%=user.user%></span>: <%=user.text%>
+      <span class="date"><em><%=user.added%></em></span>
+    </li>  </body>
+</html>

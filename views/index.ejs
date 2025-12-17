@@ -9,8 +9,8 @@
       <h1>Mini Message Board</h1>
     </header>
     <ul>
-      <% messages.forEach((user) => { %> <%- include('user', {user: user}); %>
-      <% }); %>
+      <% messages.forEach((user,index) => { %> <%- include('user',
+      {user,index}); %> <% }); %>
     </ul>
   </body>
 </html>
