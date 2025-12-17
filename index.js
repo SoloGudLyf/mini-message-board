@@ -26,6 +26,8 @@ const messages = [
   },
 ];
 
+app.use(express.urlencoded({ extended: true }));
+
 app.get("/", (req, res) => {
   res.render("index", { messages });
 });
@@ -41,3 +43,5 @@ app.listen(8080, (error) => {
 
 const assetsPath = path.join(__dirname, "public");
 app.use(express.static(assetsPath));
+
+export default messages;

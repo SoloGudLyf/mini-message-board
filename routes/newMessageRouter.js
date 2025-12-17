@@ -1,4 +1,5 @@
 import { Router } from "express";
+import messages from "../index.js";
 
 const newMessageRouter = Router();
 
@@ -7,7 +8,12 @@ newMessageRouter.get("/", (req, res) => {
 });
 
 newMessageRouter.post("/", (req, res) => {
-  res.send("Post request received");
+  messages.push({
+    text: req.body.message,
+    user: req.body.authorName,
+    added: new Date(),
+  });
+  res.redirect("/");
 });
 
 export default newMessageRouter;
