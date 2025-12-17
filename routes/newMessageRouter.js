@@ -4,7 +4,7 @@ import messages from "../index.js";
 const newMessageRouter = Router();
 
 newMessageRouter.get("/", (req, res) => {
-  res.render("form");
+  res.render("sendMessagePage");
 });
 
 newMessageRouter.post("/", (req, res) => {
