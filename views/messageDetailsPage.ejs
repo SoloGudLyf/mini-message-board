@@ -1,5 +1,3 @@
-
-
 <html>
   <head>
     <title>Write Message</title>
@@ -7,11 +5,13 @@
   </head>
   <body>
     <header>
-        <%- include('navBar'); %>
-        <h1>Message details</h1>
+      <%- include('navBar'); %>
+      <h1>Message details</h1>
     </header>
-    <li>
-      <span class="username"><%=user.user%></span>: <%=user.text%>
+    <li class="message-details">
+      <span class="username"><%=user.user%></span>:
+      <span class="message"><%=user.text%></span>
       <span class="date"><em><%=user.added%></em></span>
-    </li>  </body>
+    </li>
+  </body>
 </html>

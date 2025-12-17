@@ -1,16 +1,17 @@
 <h2>New Message Form</h2>
 <form action="/new" method="POST">
-  <label for="authorName"
+  <label for="authorName" class="authorName"
     >Author name:
     <input type="text" name="authorName" id="authorName" placeholder="John Doe"
   /></label>
-  <label for="message"
+  <label for="message" class="message"
     >Message:
-    <input
+    <textarea
       type="text"
       name="message"
       id="message"
       placeholder="Merry Christmas"
-  /></label>
+    ></textarea>
+  </label>
   <button>Submit</button>
 </form>
