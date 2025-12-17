@@ -7,15 +7,26 @@ import { dirname } from "path";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-app.set("view", path.join(__dirname, "views"));
-app.set("view engine", "ejs");
-
 const app = express();
 
+app.set("views", path.join(__dirname, "views"));
+app.set("view engine", "ejs");
 
+const messages = [
+  {
+    text: "Hi there!",
+    user: "Amando",
+    added: new Date(),
+  },
+  {
+    text: "Hello World!",
+    user: "Charles",
+    added: new Date(),
+  },
+];
 
 app.get("/", (req, res) => {
-  res.send("Hello World");
+  res.render("index", { messages });
 });
 
 app.get("/new", (req, res) => {});
