@@ -3,6 +3,7 @@ import ejs from "ejs";
 import path from "path";
 import { fileURLToPath } from "url";
 import { dirname } from "path";
+import newMessageRouter from "./routes/newMessageRouter.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -29,7 +30,7 @@ app.get("/", (req, res) => {
   res.render("index", { messages });
 });
 
-app.get("/new", (req, res) => {});
+app.use("/new", newMessageRouter);
 
 app.listen(8080, (error) => {
   if (error) {
