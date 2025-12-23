@@ -1,4 +1,9 @@
-import { getAllUsernames, insertUsername, getEntity } from "../db/queries.js";
+import {
+  getAllUsernames,
+  insertUsername,
+  getEntity,
+  dropTable,
+} from "../db/queries.js";
 
 const messageForm = (req, res) => {
   res.render("sendMessagePage");
@@ -20,4 +25,15 @@ const logMessages = async (req, res) => {
   res.render("index", { dbMessages });
 };
 
-export { messageForm, postMessage, getMessageDetails, logMessages };
+const deleteAllEntities = async (req, res) => {
+  await dropTable();
+  res.redirect("/");
+};
+
+export {
+  messageForm,
+  postMessage,
+  getMessageDetails,
+  logMessages,
+  deleteAllEntities,
+};

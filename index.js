@@ -5,7 +5,7 @@ import { fileURLToPath } from "url";
 import { dirname } from "path";
 import newMessageRouter from "./routes/newMessageRouter.js";
 import messageDetails from "./routes/messageDetails.js";
-import { logMessages } from "./Controller/userController.js";
+import { logMessages, deleteAllEntities } from "./Controller/userController.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -34,6 +34,7 @@ app.get("/", logMessages);
 
 app.use("/new", newMessageRouter);
 app.use("/messageDetails", messageDetails);
+app.use("/delete", deleteAllEntities);
 
 app.listen(8080, (error) => {
   if (error) {
