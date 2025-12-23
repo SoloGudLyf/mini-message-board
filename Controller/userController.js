@@ -1,6 +1,6 @@
 import {
-  getAllUsernames,
-  insertUsername,
+  getAllMessages,
+  insertMessage,
   getEntity,
   dropTable,
 } from "../db/queries.js";
@@ -10,7 +10,7 @@ const messageForm = (req, res) => {
 };
 
 const postMessage = async (req, res) => {
-  await insertUsername(req.body.authorName, req.body.message, new Date());
+  await insertMessage(req.body.authorName, req.body.message, new Date());
   res.redirect("/");
 };
 
@@ -20,7 +20,7 @@ const getMessageDetails = async (req, res) => {
 };
 
 const logMessages = async (req, res) => {
-  const dbMessages = await getAllUsernames();
+  const dbMessages = await getAllMessages();
 
   res.render("index", { dbMessages });
 };
