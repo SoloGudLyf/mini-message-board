@@ -17,8 +17,8 @@ const getMessageDetails = (req, res) => {
   res.render("messageDetailsPage", { user: user });
 };
 
-export {
-  messageForm,
-  postMessage,
-  getMessageDetails,
+const logMessages = (req, res) => {
+  res.render("index", { messages });
 };
+
+export { messageForm, postMessage, getMessageDetails };

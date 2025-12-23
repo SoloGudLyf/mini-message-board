@@ -5,6 +5,7 @@ import { fileURLToPath } from "url";
 import { dirname } from "path";
 import newMessageRouter from "./routes/newMessageRouter.js";
 import messageDetails from "./routes/messageDetails.js";
+import { logMessages } from "./Controller/userController.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -29,9 +30,7 @@ const messages = [
 
 app.use(express.urlencoded({ extended: true }));
 
-app.get("/", (req, res) => {
-  res.render("index", { messages });
-});
+app.get("/", logMessages);
 
 app.use("/new", newMessageRouter);
 app.use("/messageDetails", messageDetails);
