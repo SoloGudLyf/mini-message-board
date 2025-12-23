@@ -15,7 +15,7 @@ const postMessage = async (req, res) => {
 };
 
 const getMessageDetails = async (req, res) => {
-  const entityDetails = await getEntity(req.query.index);
+  const entityDetails = await getEntity(req.query.id);
   res.render("messageDetailsPage", { entityDetails: entityDetails.rows[0] });
 };
 
