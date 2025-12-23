@@ -12,4 +12,9 @@ async function insertUsername(author, username, date) {
   );
 }
 
-export { getAllUsernames, insertUsername };
+async function getEntity(author) {
+  const entity = await pool.query("SELECT * from messages WHERE author=$1",[author])
+  return entity
+}
+
+export { getAllUsernames, insertUsername,getEntity };
