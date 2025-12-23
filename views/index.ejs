@@ -9,7 +9,7 @@
       <h1>Mini Message Board</h1>
     </header>
     <ul>
-      <% messages.forEach((user,index) => { %> <%- include('user',
+      <% dbMessages.forEach((user,index) => { %> <%- include('user',
       {user,index}); %> <% }); %>
     </ul>
   </body>

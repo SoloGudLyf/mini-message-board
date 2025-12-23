@@ -12,7 +12,7 @@ async function insertUsername(author, username) {
   ]);
 }
 
-export default {
+export {
   getAllUsernames,
   insertUsername,
 };

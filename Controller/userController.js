@@ -1,3 +1,5 @@
+import { getAllUsernames } from "../db/queries.js";
+
 const messageForm = (req, res) => {
   res.render("sendMessagePage");
 };
@@ -17,8 +19,11 @@ const getMessageDetails = (req, res) => {
   res.render("messageDetailsPage", { user: user });
 };
 
-const logMessages = (req, res) => {
-  res.render("index", { messages });
+const logMessages = async (req, res) => {
+  const dbMessages = await getAllUsernames();
+  res.render("index", { dbMessages });
 };
 
-export { messageForm, postMessage, getMessageDetails };
+console.log(await getAllUsernames());
+
+export { messageForm, postMessage, getMessageDetails, logMessages };
