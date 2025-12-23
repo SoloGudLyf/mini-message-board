@@ -5,14 +5,11 @@ async function getAllUsernames() {
   return rows;
 }
 
-async function insertUsername(author, username) {
-  await pool.query("INSERT INTO messages (author,message) VALUES ($1,$2)", [
-    author,
-    username,
-  ]);
+async function insertUsername(author, username, date) {
+  await pool.query(
+    "INSERT INTO messages (author,message,time_added) VALUES ($1,$2,$3)",
+    [author, username, date]
+  );
 }
 
-export {
-  getAllUsernames,
-  insertUsername,
-};
+export { getAllUsernames, insertUsername };

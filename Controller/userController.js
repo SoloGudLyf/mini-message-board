@@ -1,15 +1,11 @@
-import { getAllUsernames } from "../db/queries.js";
+import { getAllUsernames, insertUsername } from "../db/queries.js";
 
 const messageForm = (req, res) => {
   res.render("sendMessagePage");
 };
 
-const postMessage = (req, res) => {
-  messages.push({
-    text: req.body.message,
-    user: req.body.authorName,
-    added: new Date(),
-  });
+const postMessage = async (req, res) => {
+  await insertUsername(req.body.authorName, req.body.message, new Date());
   res.redirect("/");
 };
 
